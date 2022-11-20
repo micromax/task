@@ -43,7 +43,43 @@ public class Drons {
         this.id = id;
     }
 
+    public long getSerial() {
+        return serial;
+    }
 
+    public void setSerial(long serial) {
+        this.serial = serial;
+    }
 
+    public Model getModel() {
+        return model;
+    }
 
+    public void setModel(Model model) {
+        this.model = model;
+    }
+
+    public int getWeightLimit() {
+        return WeightLimit;
+    }
+
+    public void setWeightLimit(int weightLimit) {
+        WeightLimit = weightLimit;
+    }
+
+    public int getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
+    public void setBatteryCapacity(int batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
 }
