@@ -7,10 +7,11 @@ import com.droans.task.domain.enumModels.Model;
 import com.droans.task.domain.enumModels.State;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "drons")
-public class Drons {
+public class Drons implements Serializable {
     @Id
     @Column(name = "drons_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,5 +82,18 @@ public class Drons {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Drons{" +
+                "id=" + id +
+                ", serial=" + serial +
+                ", model=" + model +
+                ", WeightLimit=" + WeightLimit +
+                ", batteryCapacity=" + batteryCapacity +
+                ", state=" + state +
+                '}';
     }
 }

@@ -1,10 +1,11 @@
 package com.droans.task.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "medication")
-public class Medication {
+public class Medication implements Serializable {
     @Id
     @Column(name = "medication_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,5 +53,16 @@ public class Medication {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Medication{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }
