@@ -54,8 +54,8 @@ public class DroansServiceImpl implements DroansService {
                     if (drons.getBatteryCapacity() != -1) {
                         existingAppUsers.setBatteryCapacity(drons.getBatteryCapacity());
                     }
-                    if (drons.getWeightLimit() != -1) {
-                        existingAppUsers.setWeightLimit(drons.getWeightLimit());
+                    if (drons.getWeightlimit() != -1) {
+                        existingAppUsers.setweightLimit(drons.getWeightlimit());
                     }
                     if (drons.getState() != null) {
                         existingAppUsers.setState(drons.getState());
@@ -89,5 +89,10 @@ public class DroansServiceImpl implements DroansService {
     @Override
     public void delete(Long id) {
         donsRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Drons> findAllByStatus( String status) {
+        return donsRepository.findAllByStatus(status);
     }
 }

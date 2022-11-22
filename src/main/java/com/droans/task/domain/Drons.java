@@ -24,8 +24,16 @@ public class Drons implements Serializable {
     @Column(name = "model", nullable = false)
     private Model model;
 
-    @Column(name = "weight_limit", nullable = false)
-    private  int WeightLimit;
+    public int getWeightlimit() {
+        return weightlimit;
+    }
+
+    public void setWeightlimit(int weightlimit) {
+        this.weightlimit = weightlimit;
+    }
+
+    @Column(name = "weightlimit", nullable = false)
+    private  int weightlimit;
 
     @Column(name = "battery_capacity", nullable = false)
     private int batteryCapacity;
@@ -60,12 +68,10 @@ public class Drons implements Serializable {
         this.model = model;
     }
 
-    public int getWeightLimit() {
-        return WeightLimit;
-    }
 
-    public void setWeightLimit(int weightLimit) {
-        WeightLimit = weightLimit;
+
+    public void setweightLimit(int weightLimit) {
+        weightLimit = weightLimit;
     }
 
     public int getBatteryCapacity() {
@@ -91,7 +97,7 @@ public class Drons implements Serializable {
                 "id=" + id +
                 ", serial=" + serial +
                 ", model=" + model +
-                ", WeightLimit=" + WeightLimit +
+                ", weightLimit=" + weightlimit +
                 ", batteryCapacity=" + batteryCapacity +
                 ", state=" + state +
                 '}';

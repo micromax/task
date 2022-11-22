@@ -31,6 +31,8 @@ public class DronasController {
     @PostMapping("/droans")
     public ResponseEntity<Drons> createAppUsers(@RequestBody Drons drons) throws URISyntaxException {
 
+
+        System.out.println(drons.toString());
         if (drons.getId() != null) {
             throw new RuntimeException("Error massage");
         }
