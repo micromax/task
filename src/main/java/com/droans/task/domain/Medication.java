@@ -2,6 +2,7 @@ package com.droans.task.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "medication")
@@ -21,6 +22,29 @@ public class Medication implements Serializable {
     private String image;
 
 
+    @Column(name = "image", nullable = false)
+    private String weight;
+
+
+    @OneToMany(mappedBy = "MedicationId")
+    Set<Transactions> transactions;
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+
+    public Set<Transactions> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transactions> transactions) {
+        this.transactions = transactions;
+    }
 
     public Long getId() {
         return id;

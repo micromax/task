@@ -8,6 +8,7 @@ import com.droans.task.domain.enumModels.State;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "drons")
@@ -43,6 +44,18 @@ public class Drons implements Serializable {
     @Column(name = "state", nullable = false)
     private State state;
 
+
+
+    @OneToMany(mappedBy = "DronsId")
+    Set<Transactions> transactions;
+
+    public Set<Transactions> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transactions> transactions) {
+        this.transactions = transactions;
+    }
 
     public Long getId() {
         return id;
