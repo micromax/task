@@ -29,7 +29,7 @@ public class DronasController {
 
 
     @PostMapping("/droans")
-    public ResponseEntity<Drons> createAppUsers(@RequestBody Drons drons) throws URISyntaxException {
+    public ResponseEntity<Drons> create(@RequestBody Drons drons) throws URISyntaxException {
 
 
         System.out.println(drons.toString());
@@ -45,7 +45,7 @@ public class DronasController {
 
 
     @GetMapping("/droans")
-    public ResponseEntity<List<Drons>> getAllAppUsers(@RequestParam(name = "page") String pageNum) {
+    public ResponseEntity<List<Drons>> getAll(@RequestParam(name = "page") String pageNum) {
 
 
 

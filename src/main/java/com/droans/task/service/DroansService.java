@@ -25,7 +25,7 @@ public interface DroansService {
 
     void delete(Long id);
 
-    Page<Drons> findAllByStatus( String status);
+    Page<Drons> findAllByStatus( String status, Pageable pageable);
 
 
 

@@ -22,7 +22,7 @@ public class Medication implements Serializable {
     private String image;
 
 
-    @Column(name = "image", nullable = false)
+    @Column(name = "weight", nullable = false)
     private String weight;
 
 

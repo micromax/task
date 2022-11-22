@@ -92,7 +92,7 @@ public class DroansServiceImpl implements DroansService {
     }
 
     @Override
-    public Page<Drons> findAllByStatus( String status) {
-        return donsRepository.findAllByStatus(status);
+    public Page<Drons> findAllByStatus( String status , Pageable pageable) {
+        return donsRepository.findAllByStatus(status , pageable);
     }
 }
