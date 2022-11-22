@@ -3,6 +3,7 @@ package com.droans.task.rest;
 import com.droans.task.domain.Drons;
 import com.droans.task.repository.DonsRepository;
 import com.droans.task.service.DroansService;
+import com.droans.task.utile.ResponseUtil;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,6 +15,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -55,5 +57,25 @@ public class DronasController {
         Page<Drons> page = droansService.findAll(pageable);
 
         return ResponseEntity.ok().body(page.getContent());
+    }
+
+
+
+    @GetMapping("/droans/{id}")
+    public ResponseEntity<Drons> getDroan(@PathVariable Long id) {
+
+        Optional<Drons> dron = droansService.findOne(id);
+
+        return ResponseUtil.wrapOrNotFound(dron);
+    }
+
+
+    @DeleteMapping("/droans/{id}")
+    public ResponseEntity<Void> deleteDroan(@PathVariable Long id) {
+
+        droansService.delete(id);
+        return ResponseEntity
+              .noContent()
+              .build();
     }
 }
