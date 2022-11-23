@@ -1,12 +1,17 @@
 package com.droans.task.service;
 
 import com.droans.task.domain.Drons;
+import com.droans.task.domain.enumModels.State;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
 public interface DroansService {
 
 
@@ -25,7 +30,7 @@ public interface DroansService {
 
     void delete(Long id);
 
-    Page<Drons> findAllByStatus( String status, Pageable pageable);
+    Page<Drons> findAllByStatus(   State state , Pageable pageable);
 
 
 

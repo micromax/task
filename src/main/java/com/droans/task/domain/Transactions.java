@@ -13,6 +13,8 @@ public class Transactions {
     @Column(name = "id", nullable = false)
     private Long id;
 
+
+
     public Long getId() {
         return id;
     }
@@ -20,6 +22,8 @@ public class Transactions {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 
     @ManyToOne
     @MapsId("DronsId")
@@ -58,4 +62,6 @@ public class Transactions {
     public void setState(State state) {
         this.state = state;
     }
+
+
 }

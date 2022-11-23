@@ -45,7 +45,7 @@ public class MedicationController {
                 .body(result);
     }
 
-    @PostMapping("/medication")
+    @GetMapping("/medication")
     public ResponseEntity<List<Medication>> getAll(@RequestParam(name = "page") String pageNum) {
 
 

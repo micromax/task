@@ -1,6 +1,7 @@
 package com.droans.task.service.impl;
 
 import com.droans.task.domain.Drons;
+import com.droans.task.domain.enumModels.State;
 import com.droans.task.repository.DonsRepository;
 import com.droans.task.service.DroansService;
 import org.springframework.data.domain.Page;
@@ -92,7 +93,7 @@ public class DroansServiceImpl implements DroansService {
     }
 
     @Override
-    public Page<Drons> findAllByStatus( String status , Pageable pageable) {
-        return donsRepository.findAllByStatus(status , pageable);
+    public Page<Drons> findAllByStatus(  State state, Pageable pageable) {
+        return donsRepository.findAllByStatus(state , pageable);
     }
 }

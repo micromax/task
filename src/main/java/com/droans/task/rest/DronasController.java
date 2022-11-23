@@ -1,6 +1,7 @@
 package com.droans.task.rest;
 
 import com.droans.task.domain.Drons;
+import com.droans.task.domain.enumModels.State;
 import com.droans.task.repository.DonsRepository;
 import com.droans.task.service.DroansService;
 import com.droans.task.utile.ResponseUtil;
@@ -55,6 +56,21 @@ public class DronasController {
 
 
         Page<Drons> page = droansService.findAll(pageable);
+
+        return ResponseEntity.ok().body(page.getContent());
+    }
+
+
+
+    @GetMapping("/droans-avalible")
+    public ResponseEntity<List<Drons>> getAllAvalible(@RequestParam(name = "page") String pageNum) {
+
+
+
+        Pageable pageable = PageRequest.of(Integer.parseInt(pageNum), 10);
+
+
+        Page<Drons> page = droansService.findAllByStatus(State.IDLE,pageable);
 
         return ResponseEntity.ok().body(page.getContent());
     }

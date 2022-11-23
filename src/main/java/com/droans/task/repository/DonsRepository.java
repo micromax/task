@@ -1,6 +1,7 @@
 package com.droans.task.repository;
 
 import com.droans.task.domain.Drons;
+import com.droans.task.domain.enumModels.State;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,10 +16,10 @@ public interface DonsRepository extends JpaRepository<Drons, Long> {
 
 
     @Query(
-            value ="select Drons from Drons Drons WHERE  Drons.state =:status",
-            countQuery = "select Drons from Drons Drons WHERE  Drons.state =:status"
+            value ="select Drons from Drons Drons WHERE  Drons.state =:state",
+            countQuery = "select Drons from Drons Drons WHERE  Drons.state =:state"
     )
-    Page<Drons> findAllByStatus(@Param("status") String status, Pageable pageable);
+    Page<Drons> findAllByStatus(@Param("state") State state, Pageable pageable);
 
 
 }
