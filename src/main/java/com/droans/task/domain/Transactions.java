@@ -26,13 +26,13 @@ public class Transactions {
 
 
     @ManyToOne
-    @MapsId("DronsId")
-    @JoinColumn(name = "drons_id")
+   // @MapsId("DronsId")
+    //@JoinColumn(name = "drons_id")
     Drons DronsId;
 
     @ManyToOne
-    @MapsId("MedicationId")
-    @JoinColumn(name = "medication_id")
+    //@MapsId("MedicationId")
+    //@JoinColumn(name = "medication_id")
     Medication MedicationId;
 
     @Enumerated(EnumType.ORDINAL)

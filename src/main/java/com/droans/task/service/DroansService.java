@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
+
 public interface DroansService {
 
 
@@ -32,7 +32,7 @@ public interface DroansService {
 
     Page<Drons> findAllByStatus(   State state , Pageable pageable);
 
-
+    List<Drons> findAllByStatusNotMatch(   State state );
 
 
 }

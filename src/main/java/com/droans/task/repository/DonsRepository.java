@@ -22,10 +22,10 @@ public interface DonsRepository extends JpaRepository<Drons, Long> {
     Page<Drons> findAllByStatus(@Param("state") State state, Pageable pageable);
 
     @Query(
-            value ="select Drons from Drons Drons WHERE  Drons.state !=:state",
-            countQuery = "select Drons from Drons Drons WHERE  Drons.state !=:state"
+            value ="select Drons from Drons Drons WHERE  Drons.state !=:state"
+
     )
-    Page<Drons> findAllByStatusNotMatch(@Param("state") State state, Pageable pageable);
+    List<Drons> findAllByStatusNotMatch(@Param("state") State state);
 
 
 }

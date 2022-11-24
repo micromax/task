@@ -46,8 +46,19 @@ public class Drons implements Serializable {
 
 
 
-    @OneToMany(mappedBy = "DronsId")
+    @OneToMany
     Set<Transactions> transactions;
+
+    @OneToMany
+    Set<BatteryLog> battery;
+
+    public Set<BatteryLog> getBattery() {
+        return battery;
+    }
+
+    public void setBattery(Set<BatteryLog> battery) {
+        this.battery = battery;
+    }
 
     public Set<Transactions> getTransactions() {
         return transactions;

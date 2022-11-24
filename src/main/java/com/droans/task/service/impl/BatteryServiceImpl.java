@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
-@Transactional
+
 public class BatteryServiceImpl implements BatteryService {
 
     private final BatteryRepository batteryRepository;
@@ -25,11 +25,9 @@ public class BatteryServiceImpl implements BatteryService {
 
     @Override
     public BatteryLog save(BatteryLog batteryLog) {
-      if(batteryLog.getId() == null){
+
           return batteryRepository.save(batteryLog);
-      }else {
-          return null;
-      }
+
 
 
     }

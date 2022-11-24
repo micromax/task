@@ -23,17 +23,17 @@ public class Medication implements Serializable {
 
 
     @Column(name = "weight", nullable = false)
-    private String weight;
+    private int weight;
 
 
-    @OneToMany(mappedBy = "MedicationId")
+    @OneToMany
     Set<Transactions> transactions;
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 

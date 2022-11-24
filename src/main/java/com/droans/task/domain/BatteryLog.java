@@ -7,7 +7,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
-
+@Entity
+@Table(name = "battery_log")
 public class BatteryLog implements Serializable {
     @Id
     @Column(name = "log_id", nullable = false)
@@ -17,10 +18,10 @@ public class BatteryLog implements Serializable {
     @Column(name = "capacity" , nullable = false)
     private int capacity;
 
-    @ManyToOne
-    @MapsId("DronsId")
-    @JoinColumn(name = "drons_id", nullable = false)
-    Drons DronsId;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+ //   @MapsId("DronsId")
+//    @JoinColumn(name = "drons_id")
+    private Drons DronsId;
 
 
     @CreatedDate

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
+
 public class DroansServiceImpl implements DroansService {
 
     private static final int MAX_DROAN = 10;
@@ -95,5 +95,10 @@ public class DroansServiceImpl implements DroansService {
     @Override
     public Page<Drons> findAllByStatus(  State state, Pageable pageable) {
         return donsRepository.findAllByStatus(state , pageable);
+    }
+
+    @Override
+    public List<Drons> findAllByStatusNotMatch(State state) {
+        return donsRepository.findAllByStatusNotMatch( state);
     }
 }
