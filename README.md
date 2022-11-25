@@ -8,6 +8,11 @@
 like any Spring app you will need to build the mvn project 
 or just run spring task from your IDE 
 
+# build JAR / mvn command 
+```
+            mvn clean install -X
+```
+
 # API's 
 
 - registering drone
@@ -64,4 +69,6 @@ or just run spring task from your IDE
   
 - check drone battery level for a given drone
 
+
+- registering medication
 
