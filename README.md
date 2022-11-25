@@ -165,5 +165,19 @@ or just run spring task from your IDE
       }
   ```
 
-    
+  [GET] http://localhost:8080/api/medication
+ will list all medications
+###
+### you can also delete or edit drone / list all drone
+### drone CRUD API 
+
+list all drone 
+[GET] http://localhost:8080/api/drones
+
+[DELETE] http://localhost:8080/api/drone/[id] 
+while id is INT 
+
+
+# thanks   
+
 
