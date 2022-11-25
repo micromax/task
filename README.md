@@ -132,7 +132,38 @@ or just run spring task from your IDE
    [GET] http://localhost:8080/api/drone-battery/[id (int)]
 
    * example [GET] http://localhost:8080/api/drone-battery/1
+  
 
-
+  ```
+      {
+        "id": 1,
+       "serial": 1000001,
+       "batteryCapacity": 98
+      }
+  ```
+## note :  battery Capacity is decreased 1% every 10 seconds when Drone not IDLE
+ 
 - registering medication
+  
+  -  [POST] http://localhost:8080/api/medication
+    ```
+      {
+       "name" :  string ,
+       "image" : string  ,
+       "code" :  string ,
+       "weight" : int
+      }
+    ``` 
+  
+    example :
+    ```
+      {
+       "name" : "string",
+       "image" : "string" ,
+       "code" : "string" ,
+       "weight" : 100
+      }
+  ```
+
+    
 
