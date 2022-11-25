@@ -46,10 +46,14 @@ public class MedicationController {
     }
 
     @GetMapping("/medication")
-    public ResponseEntity<List<Medication>> getAll(@RequestParam(name = "page") String pageNum) {
+    public ResponseEntity<List<Medication>> getAll(@RequestParam(name = "page" , required = false) String pageNum) {
 
 
 
+        if(pageNum == null)
+        {
+            pageNum = "0";
+        }
         Pageable pageable = PageRequest.of(Integer.parseInt(pageNum), 10);
 
 

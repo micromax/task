@@ -105,10 +105,33 @@ or just run spring task from your IDE
         }
         }
       ```
+      
+      ### Note :   it will only return  transactions data only if drone state is not IDLE        
+
 - checking available drones for loading
-   
+          [GET] http://localhost:8080/api/drone-available?page=0
+  
+  ```
+          [
+          {
+              "id": 2,
+              "serial": 1000002,
+              "model": "Heavyweight",
+              "weightlimit": 200,
+              "batteryCapacity": 100,
+              "state": "IDLE",
+              "transactions": [],
+              "battery": []
+            }
+           ]
+   ```      
+
+
   
 - check drone battery level for a given drone
+   [GET] http://localhost:8080/api/drone-battery/[id (int)]
+
+   * example [GET] http://localhost:8080/api/drone-battery/1
 
 
 - registering medication

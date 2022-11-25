@@ -127,9 +127,13 @@ public class DronasController {
 
 
     @GetMapping("/drones")
-    public ResponseEntity<List<Drons>> getAll(@RequestParam(name = "page") String pageNum) {
+    public ResponseEntity<List<Drons>> getAll(@RequestParam(name = "page" ,  required = false) String pageNum ) {
 
 
+        if(pageNum == null)
+        {
+            pageNum = "0";
+        }
 
         Pageable pageable = PageRequest.of(Integer.parseInt(pageNum), 10);
 
@@ -142,9 +146,14 @@ public class DronasController {
 
 
     @GetMapping("/drone-available")
-    public ResponseEntity<List<Drons>> getAllAvailable(@RequestParam(name = "page") String pageNum) {
+    public ResponseEntity<List<Drons>> getAllAvailable(@RequestParam(name = "page", required = false) String pageNum) {
 
 
+
+        if(pageNum == null)
+        {
+            pageNum = "0";
+        }
 
         Pageable pageable = PageRequest.of(Integer.parseInt(pageNum), 10);
 
