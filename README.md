@@ -59,11 +59,52 @@ or just run spring task from your IDE
       "medication_id": 1 ,
       "drone_id" : 1
     }
-    ```
+    ``` 
+  
+    it's return :
+  ```
+     {
+       "error": false,
+       "success": true,
+       "massage": "transaction done successfully"
+      }
+   ```
 - checking loaded medication items for a given drone 
-  * [GET] http://[server]/api/drone-load-info/[ID (int)]
-    
-
+  * [GET]  http://[server]/api/drone-load-info/[ID (int)]
+    * example 
+      * [GET]   http://localhost:8080/api/drone-load-info/1
+      ```
+      {
+        "id": 1,
+        "serial": 1000001,
+        "model": "Lightweight",
+        "weightlimit": 500,
+        "batteryCapacity": 85,
+        "state": "LOADED",
+        "transactions": {
+        "id": 1,
+        "state": "LOADED",
+        "dronsId": {
+        "id": 1,
+        "serial": 1000001,
+        "model": "Lightweight",
+        "weightlimit": 500,
+        "batteryCapacity": 85,
+        "state": "LOADED",
+        "transactions": [],
+        "battery": []
+        },
+        "medicationId": {
+        "id": 1,
+        "name": "MED 1",
+        "code": "TM-1",
+        "image": "path/file",
+        "weight": 100,
+        "transactions": []
+        }
+        }
+        }
+      ```
 - checking available drones for loading
    
   
