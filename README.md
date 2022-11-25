@@ -1,7 +1,7 @@
 # Drones task
 
 
-#### simple project to manage Drones missions and track battery levels 
+#### simple Spring boot project to manage Drones missions and track battery levels 
 
 ## how to use 
 
