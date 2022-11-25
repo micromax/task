@@ -1,7 +1,7 @@
 # Drones task
 
 
-#### simple task to manage Drones missions 
+#### simple project to manage Drones missions and track battery levels 
 
 ## how to use 
 
